@@ -8,26 +8,58 @@
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>  
 </head>
 <body>
-  <h1>Rachel's CRUD Intro</h1>
 
-  <h2>Entries</h2>
-    <ul class="entries"></ul>
-
-  <h4>Add a Post</h4>
-  <form>
-    User: <input type="text" id="user"><br />
-    Title: <input type="text" id="title"><br />
-    Text: <input type ="text" id="text"><br />
-      <button id="add-post">Add</button>
-  </form>
-
-  <form>
-    ID: <input type="text" id="id_number"><br />
-      <button id="update-post">Update</button><br />
-      <button id="delete-post">Delete</button>    
-  </form>
+  <div class="wrapper">
+    <div class="container">
+      <!-- Header -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Ye Olde Bulletin Board</h1>
+          <img id="border" src="/assets/images/border.gif" />
+        </div>
+      </div>  
+      <!-- 3 CRUD options -->
+      <div class="row">
+        <div class="col-xs-4">  
+        <h4>Add a Post</h4>
+          <form>
+            User: <input type="text" id="user"><br />
+            Title: <input type="text" id="title"><br />
+            Text: <input type ="text" id="text"><br />
+              <button id="add-post">Add</button>
+          </form>
+        </div>
+        <div class="col-xs-4">
+          <h4>Update a Post</h4>
+          <form>
+            ID: <input type="text" class="id_number"><br />
+            User: <input type="text" id="user"><br />
+            Title: <input type="text" id="title"><br />
+            Text: <input type ="text" id="text"><br />
+              <button id="update-post">Update</button>   
+          </form>
+        </div>
+        <div class="col-xs-4">
+          <h4>Remove a Post</h4>
+          <form>
+            ID: <input type="text" class="id_number2"><br />
+          <button id="delete-post">Delete</button> 
+          </form>
+        </div>
+      </div>
+      <!-- List of Entries -->
+      <div class="row">
+        <div class="col-xs-12">  
+          <h2>Entries</h2>
+          <img id="border" src="/assets/images/border.gif" />
+            <ul class="entries"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
