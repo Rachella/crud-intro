@@ -1,0 +1,81 @@
+.wrapper {
+  margin: 10px auto;
+  padding: 20px;
+  background-image: url('/assets/images/newspaper_background.jpg'); 
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: top center;
+  background-repeat: repeat-y;
+}
+
+h1, h2, h4 {
+  font-family: 'Great Vibes', Georgia, 'Book Antiqua', cursive, serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 80px;
+  
+}
+
+h2 {
+  font-size: 65px;
+  padding-top: 30px;
+  
+}
+
+h4 {
+  font-size: 50px;
+  
+}
+
+
+#border {
+  display: block;
+  margin: 0 auto;
+}
+
+form {
+  padding: 5px;
+  font-size: 20px;
+  font-family: Georgia, 'Book Antiqua', cursive, serif;
+}
+
+button {
+  margin: 10px -50px; 
+  position: relative;
+  top: 50%; 
+  left: 50%;
+  border-radius: 10px;
+  font-family: Georgia, 'Book Antiqua', cursive, serif;
+}
+
+input {
+  margin: 5px;
+  width: 250px; 
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  padding: 20px;
+  margin: 5px;
+  font-size: 25px;
+  font-family: Georgia, 'Book Antiqua', cursive, serif;
+  font: justify;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
+.title {
+  padding: 20px;
+  text-align: center;
+}
+
+.text {
+  padding: 20px;
+}
+
+.author {
+  padding-left: 20px;
+}
