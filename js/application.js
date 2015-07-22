@@ -4,19 +4,18 @@ $(document).ready(function () {
   var $user = $('#user');
   var $title = $('#title');
   var $text = $('#text');
-  var $ID = $('#id_number');
+  // var $ID = $('.id_number');
+
 
   function addEntry(entry) {
-    $entries.append('<li> id: ' + entry._id + ' title: ' + entry.title + 'text: ' + entry.text + ' user: ' + entry.user + '</li>');
+    $entries.prepend('<li> ID: ' + entry._id + '<span class="title"> Title: ' + entry.title + '</span><span class="author">Author: ' + entry.user + '</span><br /><span class="text">Text: ' + entry.text + '<span></li>');
   }
 
-  function updateEntry() {
-    $entries.replaceWith('<li> id: ' + entry._id + ' title: ' + entry.title + 'text: ' + entry.text + ' user: ' + entry.user + '</li>');
+
+  function updateEntry(entry) {
+    $entries.replaceWith('<li> ID: ' + entry._id + '<span class="title"> Title: ' + entry.title + '</span><span class="author">Author: ' + entry.user + '</span><br /><span class="text">Text: ' + entry.text + '<span></li>');
   }
 
-  function removeEntry() {
-    $entries.remove('<li> id: ' + entry._id + ' title: ' + entry.title + 'text: ' + entry.text + ' user: ' + entry.user + '</li>');
-  }
 
   $.ajax({
     type: 'GET',
@@ -46,6 +45,7 @@ $(document).ready(function () {
       success: function(newEntry) {
         addEntry(newEntry);
         console.log("Success", newEntry);
+
       },
       error: function() {
         console.log('Error adding post');
@@ -54,9 +54,10 @@ $(document).ready(function () {
   });
 
   $('#update-post').click(function() {
+    event.preventDefault();
     $.ajax({
       type: 'PUT',
-        url: 'http://ga-wdi-api.meteor.com/api/posts/' + $ID.val(),
+        url: 'http://ga-wdi-api.meteor.com/api/posts/' + $('.id_number').val(),
       data: {      
         user: $user.val(),
         title: $title.val(),
@@ -65,7 +66,7 @@ $(document).ready(function () {
       dataType: 'json',
       success: function(improvedEntry) {
         updateEntry(improvedEntry);
-        console.log("Success", response);
+        console.log("Success");
       },
       error: function() {
         console.log('Error updating post');
@@ -75,15 +76,16 @@ $(document).ready(function () {
 
   $('#delete-post').click(function() {
     if (window.confirm("Are you sure you want to delete that?")) {
+      event.preventDefault();
       $.ajax({
-      type: 'DELETE',
-        url: 'http://ga-wdi-api.meteor.com/api/posts/' + $ID.val(),
-      success: removeEntry(),
-
+        type: 'DELETE',
+        url: 'http://ga-wdi-api.meteor.com/api/posts/' + $('.id_number2').val(),
+        success: function(response){
+          console.log(response);  
+        },
       });
-    };
-  })
-
+    }
+  });
 })
 
 
